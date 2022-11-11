@@ -105,3 +105,10 @@ Requires that the docker container that is running Elasticsearch is exposed at p
 curl -H "Content-Type: application/json" \
 -d '{"source": { "remote": { "host": "http://host.docker.internal:9201"}, "index": "index_name" }, "dest": { "index": "index_name"}}' http://127.0.0.1:9200/_reindex
 ```
+
+## Processes
+
+### Find which task is using given port on MacOS
+```
+lsof -i -P | grep LISTEN | grep :[port]
+```
